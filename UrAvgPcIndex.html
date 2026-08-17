@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<!-- This tells the browser we are using HTML5 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- The viewport tag tells mobile browsers to use the device's
+         actual width instead of zooming out to fit a desktop layout. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UrAvgPC - Home</title>
+    <!-- This links our shared stylesheet to this page -->
+    <link rel="stylesheet" href="UrAvgPc.css">
+</head>
+<body>
+
+    <!-- Accessibility: lets keyboard users jump past the header/nav
+         straight to the main content. It's invisible until focused. -->
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <!-- ===================== HEADER / NAV ===================== -->
+    <header>
+        <h1>UrAvgPC</h1>
+        <nav aria-label="Main">
+            <ul>
+                <li><a href="UrAvgPcIndex.html">Home</a></li>
+                <li><a href="UrAvgPcHTMLBuild.html">Build Guide</a></li>
+                <li><a href="UrAvgPcHTMLContact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- <main> marks the one and only main content area of the page,
+         separate from the repeated header/footer. -->
+    <main id="main">
+
+        <!-- ===================== HERO SECTION ===================== -->
+        <section class="hero">
+            <h2>Build your first PC with confidence!</h2>
+            <p>No fluff, no jargon, just a clear path from parts list to power button.</p>
+        </section>
+
+        <!-- ===================== INTRO SECTION ===================== -->
+        <section>
+            <h2>Your Journey Starts Here</h2>
+            <p>
+                Building your own computer sounds scary, but it doesn't have to be!
+                UrAvgPC breaks PC building down into simple steps so a total beginner
+                can go from "what is a motherboard?" to "I built my own gaming PC!"
+                Pick a budget, follow our part list, and follow our step by step
+                guide, that's really all it takes.
+            </p>
+        </section>
+
+        <!-- ===================== FEATURED SECTION ===================== -->
+        <section>
+            <h2>Featured</h2>
+
+            <!-- Each <article> below is a self contained "card": a title
+                 and a short description. .card is set to display:
+                 inline block in the CSS file, so the three articles sit
+                 next to each other in a row. -->
+            <article class="card">
+                <h3>Fresh Parts</h3>
+                <p>See the exact components that go into each build tier.</p>
+            </article>
+
+            <article class="card">
+                <h3>Hands On Guides</h3>
+                <p>Follow along step by step as we put a build together.</p>
+            </article>
+
+            <article class="card">
+                <h3>Dream Builds</h3>
+                <p>Not on a budget? Check out our high end build option too.</p>
+            </article>
+        </section>
+
+        <!-- ===================== HAPPY CUSTOMER SECTION ===================== -->
+        <section>
+            <h2>Happy Customer!!</h2>
+            <div class="testimonial">
+                <!-- <blockquote> semantically marks this as a quoted passage -->
+                <blockquote>
+                    <p>
+                        "I never thought I'd build my own PC, but UrAvgPC's guide made it
+                        actually easy to follow. Now I'm the tech support friend!"
+                    </p>
+                    <p><cite>A Very Average Customer</cite></p>
+                </blockquote>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer>
+        <p>Footer - rest your feet here, oh yeah and copyright stuffs too.</p>
+        <p>&copy; 2026 UrAvgPC. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,265 @@
+﻿/* =========================================================
+   style.css
+   This is the ONE stylesheet shared by all three pages:
+   index.html, build-guide.html, and contact.html
+   Linking one CSS file to many HTML pages is how real sites
+   keep their look consistent without repeating code.
+   ========================================================= */
+
+/* ---- Basic page setup ---- */
+
+/* box sizing: border-box makes padding and border count INSIDE an
+   element's width, instead of adding on top of it. This keeps our
+   math simple (a width: 100% box never overflows its container). */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    /* font-family sets the text style for the whole page */
+    font-family: Arial, Helvetica, sans-serif;
+    /* background-color and color set the page's dark theme */
+    background-color: #1b1b2f;
+    color: #f2f2f2;
+    /* margin: 0 removes the little white gap browsers add by default */
+    margin: 0;
+    padding: 0;
+}
+
+/* ---- Accessibility: "Skip to main content" link ----
+   This link is hidden off screen until a keyboard user presses Tab,
+   at which point it becomes visible. It lets someone using a
+   keyboard or screen reader skip past the repeated header/nav on
+   every page and jump straight to the page's main content. */
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: auto;
+    background-color: #2cb67d;
+    color: #12121f;
+    padding: 10px 15px;
+    font-weight: bold;
+    text-decoration: none;
+    z-index: 100;
+}
+
+    .skip-link:focus {
+        left: 10px;
+        top: 10px;
+    }
+
+/* ---- Header bar (logo + navigation) ---- */
+header {
+    background-color: #12121f;
+    padding: 15px;
+    text-align: center;
+    /* border-bottom draws a single line under the header */
+    border-bottom: 3px solid #7f5af0;
+}
+
+    /* The site logo/title text */
+    header h1 {
+        color: #7f5af0;
+        margin: 0;
+        font-size: 32px;
+    }
+
+/* ---- Navigation bar ----
+   We use a <ul> list for the nav links. Each <li> is set to
+   display: inline block so the links sit NEXT TO each other
+   instead of stacking on separate lines like a normal list. */
+nav ul {
+    list-style-type: none; /* removes the bullet points */
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+    nav ul li {
+        display: inline-block; /* puts list items side by side */
+        margin: 0 15px;
+    }
+
+        nav ul li a {
+            color: #f2f2f2;
+            text-decoration: none; /* removes the default underline */
+            font-size: 18px;
+            padding: 8px 12px;
+            border: 2px solid transparent; /* invisible border, until hover */
+        }
+
+            /* :hover changes the style when the mouse is over the link */
+            nav ul li a:hover {
+                color: #2cb67d;
+                border: 2px solid #2cb67d;
+            }
+
+/* ---- Hero / banner section on the Home page ---- */
+.hero {
+    text-align: center;
+    padding: 30px 15px;
+    background-color: #232342;
+}
+
+    .hero h2 {
+        color: #2cb67d;
+        font-size: 28px;
+    }
+
+/* ---- General section spacing ---- */
+section {
+    padding: 30px 40px;
+}
+
+    section h2 {
+        color: #7f5af0;
+        border-bottom: 2px solid #2cb67d;
+        padding-bottom: 8px;
+    }
+
+/* ---- Card boxes (used for Featured articles, build tiers, etc.) ----
+   display: inline-block lets three cards line up side by side.
+   This is a classic beginner way to build a simple 3-column layout
+   without needing Flexbox or Grid. */
+.card {
+    display: inline-block;
+    width: 28%;
+    min-width: 220px;
+    vertical-align: top;
+    background-color: #232342;
+    border: 2px solid #7f5af0;
+    border-radius: 8px; /* rounds the corners a little */
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+}
+
+/* ---- Testimonial / Happy Customer box ---- */
+.testimonial {
+    background-color: #232342;
+    border: 2px dashed #2cb67d;
+    padding: 20px;
+    text-align: center;
+}
+
+    /* The quote itself is marked up with <blockquote>, which browsers
+   indent by default -- we remove that so it matches our own layout. */
+    .testimonial blockquote {
+        margin: 15px 0 0 0;
+        border: none;
+        padding: 0;
+    }
+
+    /* <cite> is used to name who is being quoted. Browsers italicize it
+   by default; we make it bold instead so it stands out. */
+    .testimonial cite {
+        font-style: normal;
+        font-weight: bold;
+    }
+
+/* ---- Simple table styling (used on the Build Guide page) ---- */
+table {
+    width: 100%;
+    border-collapse: collapse; /* makes borders single lines, not doubled */
+    margin-top: 15px;
+}
+
+th, td {
+    border: 1px solid #7f5af0;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #7f5af0;
+    color: #ffffff;
+}
+
+/* Zebra-striping every other row makes long tables easier to read */
+tr:nth-child(even) {
+    background-color: #232342;
+}
+
+/* ---- Contact form styling ---- */
+form {
+    background-color: #232342;
+    padding: 20px;
+    border: 2px solid #7f5af0;
+    border-radius: 8px;
+    max-width: 500px;
+}
+
+    form label {
+        display: block; /* puts each label on its own line */
+        margin-top: 12px;
+        margin-bottom: 4px;
+        font-weight: bold;
+    }
+
+    form input,
+    form textarea {
+        /* width: 100% works safely here because box-sizing: border-box
+     (set at the top of this file) keeps the padding and border
+     from pushing the element wider than its container. */
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #2cb67d;
+        border-radius: 4px;
+        background-color: #1b1b2f;
+        color: #f2f2f2;
+    }
+
+    /* <fieldset> groups the form's fields together for screen readers.
+   We strip its default border/padding since .card/form already
+   provides the visual box around everything. */
+    form fieldset {
+        border: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    form legend {
+        font-size: 20px;
+        font-weight: bold;
+        color: #2cb67d;
+        padding: 0;
+        margin-bottom: 5px;
+    }
+
+    form button {
+        margin-top: 15px;
+        padding: 10px 20px;
+        background-color: #2cb67d;
+        color: #12121f;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+        form button:hover {
+            background-color: #7f5af0;
+            color: #ffffff;
+        }
+
+/* ---- Location / contact-details boxes ----
+   These use the <address> tag in the HTML, which browsers italicize
+   by default. font-style: normal turns that off so it reads like
+   regular text. */
+.info-box {
+    background-color: #232342;
+    border: 2px solid #2cb67d;
+    padding: 15px;
+    margin-top: 15px;
+    max-width: 500px;
+    font-style: normal;
+}
+
+/* ---- Footer ---- */
+footer {
+    background-color: #12121f;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    border-top: 3px solid #7f5af0;
+    color: #aaaaaa;
+}

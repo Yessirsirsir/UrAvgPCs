@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UrAvgPC - Contact Us</title>
+    <link rel="stylesheet" href="UrAvgPc.css">
+</head>
+<body>
+
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <!-- ===================== HEADER / NAV ===================== -->
+    <header>
+        <h1>UrAvgPC</h1>
+        <nav aria-label="Main">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="build-guide.html">Build Guide</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+
+        <!-- ===================== INTRO ===================== -->
+        <section>
+            <h2>Contact Us!</h2>
+            <p>
+                If you are having trouble with your PC build, or a part we
+                recommended just isn't working out, we've got your back!
+                Send us a message below and we'll get back to you.
+            </p>
+        </section>
+
+        <!-- ===================== CONTACT FORM ===================== -->
+        <section>
+            <h2>Send Us a Message</h2>
+
+            <!-- This form does not connect to a real server -- it's just the
+                 HTML structure a beginner site would use. The "action" would
+                 normally point to a script that processes the form. -->
+            <form action="#" method="get">
+                <!-- <fieldset> + <legend> group the related fields together,
+                     which screen readers announce as one unit. -->
+                <fieldset>
+                    <legend>Contact Form</legend>
+
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required>
+
+                    <label for="contactinfo">Email / Phone Number / Carrier Pigeon Number:</label>
+                    <input type="text" id="contactinfo" name="contactinfo" placeholder="How can we reach you?" required>
+
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject" placeholder="What's this about?" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Tell us what's going on..." required></textarea>
+
+                    <button type="submit">Send Message</button>
+                </fieldset>
+            </form>
+        </section>
+
+        <!-- ===================== LOCATION ===================== -->
+        <section>
+            <h2>Our Location</h2>
+            <!-- <address> is the correct HTML5 tag for contact/location
+                 information, whether it's for a person, page, or business. -->
+            <address class="info-box">
+                UrAvgPC Workshop<br>
+                123 Motherboard Lane<br>
+                Tempe, AZ 85281
+            </address>
+        </section>
+
+        <!-- ===================== CONTACT DETAILS ===================== -->
+        <section>
+            <h2>Contact Details</h2>
+            <address class="info-box">
+                <strong>Email:</strong> <a href="mailto:support@uravgpc.com">support@uravgpc.com</a><br>
+                <strong>Phone:</strong> <a href="tel:+15551234567">(555) 123-4567</a><br>
+                <strong>Hours:</strong> Monday - Friday, 9am - 5pm
+            </address>
+        </section>
+
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer>
+        <p>Footer - rest your feet here, oh yeah and copyright stuffs too.</p>
+        <p>&copy; 2026 UrAvgPC. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
